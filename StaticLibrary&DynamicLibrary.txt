@@ -1,0 +1,7 @@
+.o are object files.
+
+.a/.lib files are linked at build time. They cannot be replaced after the fact. This makes them static.
+
+.so/.dll files are linked at runtime. They can be replaced any time before execution starts. This makes them dynamic.
+
+Relocation refers to placement of a binary in memory; code from static libraries is integrated with the binary and so can't be relocated independently.
