@@ -1,0 +1,13 @@
+In C++ namespaces are just about partitioning the available names. Java packages are about modules. The naming hierarchy is just one aspect of it.
+
+There's nothing wrong, per-se, with deeply nested namespaces in C++, except that they're not normally necessary as there's no module system behind them, and the extra layers just add noise. It's usually sufficient to have one or two levels of namespace, with the odd extra level for internal details (often just called Details).
+
+There are also extra rules to C++ namespaces that may catch you out if overused - such as argument-dependent-lookup, and the rules around resolving to parent levels. WRT the latter, take:
+
+namespace a{ namespace b{ int x; } }
+namespace b{ string x; }
+namespace a
+{
+  b::x = 42;
+}
+Is this legal? Is it obvious what's happening? You need to know the precendence of the namespace resolution to answer those questions.
