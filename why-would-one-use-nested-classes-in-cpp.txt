@@ -1,0 +1,23 @@
+Nested classes are cool for hiding implementation details
+
+List:
+
+class List
+{
+    public:
+        List(): head(NULL), tail(NULL) {}
+    private:
+        class Node
+        {
+              public:
+                  int   data;
+                  Node* next;
+                  Node* prev;
+        };
+    private:
+        Node*     head;
+        Node*     tail;
+};
+Here I don't want to expose Node as other people may decide to use the class and that would hinder me from updating my class as anything exposed is part of the public API and must be maintained forever. By making the class private, I not only hide the implementation I am also saying this is mine and I may change it at any time so you can not use it.
+
+Look at std::list or std::map they all contain hidden classes (or do they?). The point is they may or may not, but because the implementation is private and hidden the builders of the STL were able to update the code without affecting how you used the code, or leaving a lot of old baggage laying around the STL because they need to maintain backwards compatibility with some fool who decided they wanted to use the Node class that was hidden inside <list>.
