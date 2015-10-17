@@ -1,0 +1,11 @@
+
+
+The static keyword serves two distinct purposes in C, what I call duration and visibility.
+
+When used at file level (outside of any function), it controls visibility. The duration of those variables are already defined as being the entire duration of the program so you don't need static for that.
+
+Static variable at file level are invisible to anything outside the translation unit (the linker can't see it).
+
+When used at function level (inside a function), it controls duration. That's because the visibility is already defined as being local to that function.
+
+In that case, the duration of the variable is the entire duration of the program and the value is maintained between invocations of the function.
