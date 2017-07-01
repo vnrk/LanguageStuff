@@ -1,0 +1,18 @@
+cout << endl vs cout << "\n" in C++
+
+Although they both seem to do the same thing, there is a subtle difference between them.
+
+cout << endl  : Inserts a new line and flushes the stream
+
+cout << "\n"  : Only inserts a new line.
+
+
+Therefore,
+
+cout << endl;
+
+can be said equivalent to
+
+cout << ‘\n’ << flush;
+
+As a conclusion, cout << “\n” seems performance wise better than cout << endl; unless flushing of stream is required.
