@@ -1,0 +1,75 @@
+Ceil and Floor functions in C++
+In mathematics and computer science, the floor and ceiling functions map a real number to the greatest preceding or the least succeeding integer, respectively.
+
+floor(x) : Returns the largest integer that is smaller than or equal to x (i.e : rounds downs the nearest integer).
+
+// Here x is the floating point value.
+// Returns the largest integer smaller 
+// than or equal to x 
+double floor(double x)  
+Examples of Floor:
+
+Input : 2.5
+Output : 2
+
+Input : -2.1
+Output : -3
+
+Input : 2.9
+Output : 2
+// C++ program to demonstrate floor function
+#include <iostream>
+#include <cmath>
+using namespace std;
+ 
+// Driver function
+int main()
+{
+    // using floor function which return
+    // floor of input value
+    cout << "Floor is : " << floor(2.3) << endl;
+    cout << "Floor is : " << floor(-2.3) << endl;
+ 
+    return 0;
+}
+
+Output:
+
+Floor is : 2
+Floor is : -3
+ 
+
+ceil(x) : Returns the smallest integer that is greater than or equal to x (i.e : rounds up the nearest integer).
+
+// Here x is the floating point value.
+// Returns the smallest integer greater 
+// than or equal to x 
+double ceiling(double x)  
+Examples of Ceil:
+
+Input : 2.5
+Output : 3
+
+Input : -2.1
+Output : -2
+
+Input : 2.9
+Output : 3
+// C++ program to demonstrate ceil function
+#include <iostream>
+#include <cmath>
+using namespace std;
+ 
+// Driver function
+int main()
+{
+    // using ceil function which return
+    // floor of input value
+    cout << " Ceil is : " << ceil(2.3) << endl;
+    cout << " Ceil is : " << ceil(-2.3) << endl;
+ 
+    return 0;
+}
+
+Ceil is : 3
+Ceil is : -2
