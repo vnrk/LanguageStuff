@@ -11,7 +11,7 @@ class Test
       // Error: Virtual member functions cannot be static      
       virtual static void fun()  { }
 };
-Run on IDE
+
 Also, static member function cannot be const and volatile. Following code also fails in compilation.
 
 #include<iostream>
